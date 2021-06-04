@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
   "manifestVersion": "1.8",
   "id": "a328908a-c24d-45f8-a6ed-d778aa870612",
-  "version": "1.0.0",
-  "packageName": "{{PACKAGE_NAME}}",
+  "version": "1.0.1",
+  "packageName": "aum-selflearn-planets",
   "developer": {
     "name": "AUM LLC",
     "websiteUrl": "https://{{HOSTNAME}}",
@@ -33,15 +33,16 @@
       "canUpdateConfiguration": false,
       "commands": [
         {
-          "id": "planetExpanderAction",
-          "type": "action",
-          "title": "Planet Expander",
-          "description": "Lookup the details of a planet.",
-          "context": [
-            "compose",
-            "message"
-          ],
-          "fetchTask": true
+          "id": "planetExpanderSearch",
+          "type": "query",
+          "title": "Planet Lookup",
+          "description": "Search for a planet",
+          "context": ["compose"],
+          "parameters": [{
+            "name": "searchKeyword",
+            "description": "Enter 'inner','outer' or the name of a specific planet",
+            "title": "Planet"
+          }]
         }
       ]
     }
