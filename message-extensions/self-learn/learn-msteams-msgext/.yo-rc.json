@@ -1,0 +1,9 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "AUM LLC"
+    },
+    "libraryName": "messagingExt",
+    "generator-version": "3.1.0"
+  }
+}
