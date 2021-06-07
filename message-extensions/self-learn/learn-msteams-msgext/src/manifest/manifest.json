@@ -6,17 +6,17 @@
   "packageName": "aum-selflearn-planets",
   "developer": {
     "name": "AUM LLC",
-    "websiteUrl": "https://{{HOSTNAME}}",
-    "privacyUrl": "https://{{HOSTNAME}}/privacy.html",
-    "termsOfUseUrl": "https://{{HOSTNAME}}/tou.html"
+    "websiteUrl": "https://arjunumenon.com/",
+    "privacyUrl": "https://arjunumenon.com/",
+    "termsOfUseUrl": "https://arjunumenon.com/"
   },
   "name": {
-    "short": "Planet Messaging",
-    "full": "Planet Messaging"
+    "short": "AUM - Planet Messaging",
+    "full": "AUM - Planet Messaging"
   },
   "description": {
-    "short": "TODO: add short description here",
-    "full": "TODO: add full description here"
+    "short": "App for searching the planet details",
+    "full": "Let us search planet details from there."
   },
   "icons": {
     "outline": "icon-outline.png",
