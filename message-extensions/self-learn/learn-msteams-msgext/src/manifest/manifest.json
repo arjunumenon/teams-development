@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
   "manifestVersion": "1.8",
   "id": "a328908a-c24d-45f8-a6ed-d778aa870612",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "packageName": "aum-selflearn-planets",
   "developer": {
     "name": "AUM LLC",
@@ -44,6 +44,16 @@
             "title": "Planet"
           }]
         }
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": [
+              "*.wikipedia.org"
+            ]
+          }
+        }
       ]
     }
   ],
@@ -52,7 +62,7 @@
     "messageTeamMembers"
   ],
   "validDomains": [
-    "{{HOSTNAME}}"
+    "*.wikipedia.org"
   ],
   "showLoadingIndicator": false
 }

@@ -3,7 +3,8 @@ import {
   TurnContext,
   MessageFactory,
   CardFactory, MessagingExtensionAction, MessagingExtensionActionResponse, MessagingExtensionAttachment,
-  MessagingExtensionQuery, MessagingExtensionResponse
+  MessagingExtensionQuery, MessagingExtensionResponse,
+  AppBasedLinkQuery
   } from "botbuilder";
   import { find, sortBy } from "lodash";
   
@@ -139,6 +140,23 @@ import {
 
     private getPlanetResultCard(selectedPlanet: any): MessagingExtensionAttachment {
       return CardFactory.heroCard(selectedPlanet.name, selectedPlanet.summary, [selectedPlanet.imageLink]);
+    }
+
+    protected handleTeamsAppBasedLinkQuery(context: TurnContext, query: AppBasedLinkQuery): Promise<MessagingExtensionResponse> {
+      // load planets
+      const planets: any = require("./planets.json");
+      // get the selected planet
+      const selectedPlanet: any = planets.filter((planet) => planet.wikiLink === query.url)[0];
+      const adaptiveCard = this.getPlanetDetailCard(selectedPlanet);
+    
+      // generate the response
+      return Promise.resolve({
+        composeExtension: {
+          type: "result",
+          attachmentLayout: "list",
+          attachments: [adaptiveCard]
+        }
+      } as MessagingExtensionActionResponse);
     }
 
   }
