@@ -3,7 +3,7 @@ import {
   TurnContext,
   MessageFactory,
   CardFactory, MessagingExtensionAction, MessagingExtensionActionResponse, MessagingExtensionAttachment,
-  MessagingExtensionQuery, MessagingExtensionResponse,AppBasedLinkQuery
+  MessagingExtensionQuery, MessagingExtensionResponse
   } from "botbuilder";
   import { find, sortBy } from "lodash";
   
@@ -17,8 +17,6 @@ import {
     constructor() {
       super();
     }
-
-    //Message EXtensions Begins
 
     protected handleTeamsMessagingExtensionFetchTask(context: TurnContext, action: MessagingExtensionAction): Promise<MessagingExtensionActionResponse> {
       // load planets & sort them by their order from the sun
@@ -142,27 +140,5 @@ import {
     private getPlanetResultCard(selectedPlanet: any): MessagingExtensionAttachment {
       return CardFactory.heroCard(selectedPlanet.name, selectedPlanet.summary, [selectedPlanet.imageLink]);
     }
-    //End of Message Extensions
-
-    //Search Extension Begins
-    
-    protected handleTeamsAppBasedLinkQuery(context: TurnContext, query: AppBasedLinkQuery): Promise<MessagingExtensionResponse> {
-      // load planets
-      const planets: any = require("./planets.json");
-      // get the selected planet
-      const selectedPlanet: any = planets.filter((planet) => planet.wikiLink === query.url)[0];
-      const adaptiveCard = this.getPlanetDetailCard(selectedPlanet);
-  
-      // generate the response
-      return Promise.resolve(<MessagingExtensionActionResponse>{
-        composeExtension: {
-          type: "result",
-          attachmentLayout: "list",
-          attachments: [adaptiveCard]
-        }
-      });
-    }
-
-    //End of Search Extensions
 
   }
