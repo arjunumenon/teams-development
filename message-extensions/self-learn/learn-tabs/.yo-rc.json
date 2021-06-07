@@ -1,0 +1,9 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "AUM LLC"
+    },
+    "libraryName": "learnMsTeamsTabs",
+    "generator-version": "3.2.0"
+  }
+}
