@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "version": "1.0.0",
+  "id": "4ee7c5f1-e4db-4bbe-b657-ed155a81de35",
+  "packageName": "aum.learn.conversationalbot",
+  "developer": {
+      "name": "AUM LLC",
+      "websiteUrl": "https://arjunumenon.com/",
+      "privacyUrl": "https://arjunumenon.com/",
+      "termsOfUseUrl": "https://arjunumenon.com/"
+  },
+  "icons": {
+      "outline": "icon-outline.png",
+      "color": "icon-color.png"
+    },
+  "name": {
+      "short": "AUM Conversational Bot",
+      "full": "AUM Conversational Bot Inc."
+  },
+  "description": {
+      "short": "AUM Conversational Bot",
+      "full": "This is the conversational Bot created by AUM LLC"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+      {
+          "entityId": "conversations",
+          "scopes": [
+              "personal"
+          ]
+      },
+      {
+          "entityId": "about",
+          "scopes": [
+              "personal"
+          ]
+      }
+  ],
+  "bots": [
+      {
+          "botId": "c18359ac-8661-4f1e-8dda-125f51108952",
+          "scopes": [
+              "personal",
+              "team"
+          ],
+          "commandLists": [
+            {
+              "scopes": [ "team", "personal" ],
+              "commands": [
+                {
+                  "title": "Help",
+                  "description": "Shows help information"
+                },
+                {
+                  "title": "MentionMe",
+                  "description": "Sends message with @mention of the sender"
+                }
+              ]
+            }
+          ],
+          "supportsFiles": false,
+          "isNotificationOnly": false
+      }
+  ],
+  "permissions": [
+      "identity",
+      "messageTeamMembers"
+  ],
+  "validDomains": []
+}
